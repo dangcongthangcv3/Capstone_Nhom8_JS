@@ -96,6 +96,9 @@ ul {
   line-height: 36px;
   font-weight: 400;
 }
+#resgiter .resgiter__content .form-control ::-moz-placeholder {
+  color: #000;
+}
 #resgiter .resgiter__content .form-control ::placeholder {
   color: #000;
 }

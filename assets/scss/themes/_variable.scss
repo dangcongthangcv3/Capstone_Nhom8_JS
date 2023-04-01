@@ -1,0 +1,57 @@
+// Text
+$text-c0-dark: #000;
+$text-c1-dark: rgb(0, 0, 0, 0.7);
+$text-c2-dark: #cbc9c9;
+$text-c0-light: #f6f6f6;
+$text-c1-light: #fff;
+$text-c0-success: #1ED90E;
+$text-c0-danger:rgb(206, 64, 64);
+$text-c1-danger:rgb(246, 36, 36);
+
+$fs-base: 16px;
+$fs-xl: 20px;
+$fs-2xl: 24px;
+$fs-3xl: 30px;
+$fs-4xl: 40px;
+
+$fw-thin: 100;
+$fw-extralight: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+// Background
+$bg-c0-dark: #000;
+$bg-c1-dark: #dedddc;
+$bg-c0-light: #fffcfc;
+$bg-c1-light: #f8f8f8;
+$bg-c0-warning: #f8b653;
+$bg-c1-warning: #e1b067;
+$bg-c2-warning: #d6b98d;
+
+// Border
+$bd-c0-grey: #e8e8e8;
+$bd-c1-grey: #d3d3d3;
+
+// Mixin
+@mixin text($fs,$fw,$c){
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+}
+@mixin button($p,$bd,$fs,$fw,$bg,$c,$c-hover,$bg-hover){
+    padding: $p;
+    border: $bd;
+    font-size: $fs;
+    font-weight: $fw;
+    background-color: $bg;
+    color: $c;
+    &:hover{
+        color: $c-hover;
+        background-color: $bg-hover;
+    }
+}
