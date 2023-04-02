@@ -16,6 +16,15 @@ ul{
     margin-left: 2px; 
     display: inline-block;
   }
+.eye{
+position: relative;
+}
+.eye__a{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 25px;
+}
 #top__header{
     background-color: #000000;
     padding: 14px 15px;
