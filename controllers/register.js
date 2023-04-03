@@ -116,8 +116,6 @@ document.getElementById('register').onclick = function(){
 if(loiEmail!=0 || loiMatKhau!=0 || loiTK!=0 || loiPhone!=0 || loiPassCom!=0){
   return
 }
-
-
     
   DangKy(user)
   }
@@ -134,4 +132,26 @@ function DangKy(user){
     promise.catch(function(err) {
         console.log(err.response.data);
     })
+}
+
+
+
+///EYE
+
+function toggle(txt__id1,txt__id2){
+  let id1 = document.getElementById(txt__id1)
+  let id2 = document.getElementById(txt__id2)
+  if(id1.type=== 'password'){
+    id1.setAttribute('type', 'text');
+    id2.style.color = '#7a797e';
+  }else{
+    id1.setAttribute('type', 'password');
+    id2.style.color = '#5887ef';
+  }
+}
+document.getElementById('eye__open').onclick = function(){
+  toggle('txt__password','eye__open')
+}
+document.getElementById('eye__open__2').onclick = function(){
+  toggle('txt__pwdCm','eye__open__2')
 }

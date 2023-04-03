@@ -229,8 +229,7 @@ header .container .header .header_right .header_user a {
   display: grid;
   grid-template-columns: repeat(3, 307px);
   justify-content: center;
-  -moz-column-gap: 60px;
-       column-gap: 60px;
+  column-gap: 60px;
   row-gap: 40px;
 }
 @media screen and (max-width: 1120px) {

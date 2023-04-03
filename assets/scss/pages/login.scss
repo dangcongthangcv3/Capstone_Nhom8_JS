@@ -82,7 +82,7 @@ ul{
         }
     }
 }
-#resgiter{
+#login{
     background-color: #fffcfc;
     padding-top: 30px;
     h2{
@@ -92,7 +92,11 @@ ul{
         line-height: 48px;
         font-weight: 400;
     }
-    .resgiter__content{
+    .login__content{
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        margin-top: 85px;
         .form-control{
             border-width: 0 0 5px 0;
             border-color: #111;
@@ -112,15 +116,7 @@ ul{
             }
         }
         
-        .sex{
-            border-width: 0 0 5px 0;
-            border-color: #ccc;
-            color: #000000;
-            border-radius:0;
-            font-size: 30px;
-            line-height: 36px;
-            font-weight: 400;
-        }
+
         .btn__1{
             color: #FFFCFC;
             background-color: #AE18E2;
