@@ -85,6 +85,52 @@ ul {
   opacity: 1;
 }
 
+#login {
+  background-color: #fffcfc;
+  padding-top: 30px;
+}
+#login h2 {
+  color: #000;
+  text-align: center;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 400;
+}
+#login .login__content {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  margin-top: 85px;
+}
+#login .login__content .form-control {
+  border-width: 0 0 5px 0;
+  border-color: #111;
+  color: #000000;
+  background-color: #fffcfc;
+  border-radius: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+}
+#login .login__content .form-control ::placeholder {
+  color: #000;
+}
+#login .login__content .form-control :focus {
+  box-shadow: none;
+  border-color: #ae18e2;
+  transition: all 0.75s;
+}
+#login .login__content .btn__1 {
+  color: #FFFCFC;
+  background-color: #AE18E2;
+  border-color: #AE18E2;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  padding: 8px 70px;
+  border-radius: 10px;
+}
+
 #footer .top__footer {
   background-color: #fafafa;
   padding: 30px 0;

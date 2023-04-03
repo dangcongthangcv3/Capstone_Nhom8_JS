@@ -1,3 +1,5 @@
+import { em } from "./login.js";
+
 function renderProductFeature(arrProd) {
   var htmlContent = "";
   for (var index = 0; index < arrProd.length; index++) {
@@ -37,3 +39,5 @@ window.addEventListener("load", function () {
   getAllProduct();
 });
 
+
+    document.getElementById('a').innerHTML = em

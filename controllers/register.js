@@ -2,6 +2,7 @@ import {Validation} from '../util/validation.js'
 import { User } from "../models/User.js";
 
 document.getElementById('register').onclick = function(){
+    let IDname = document.getElementById('txt__email').value
     var user = new User();
     user.email = document.getElementById('txt__email').value
     user.password = document.getElementById('txt__password').value
@@ -19,7 +20,9 @@ document.getElementById('register').onclick = function(){
 
     let passcm = document.getElementById('txt__pwdCm').value
 
+    /**---------------------------------Bắt lỗi------------------------------------------------------ */
     var kiemTra = new Validation()
+    /**---------------------------------Bắt lỗi email ------------------------------------------------------ */
     // Khởi tạo biến lổi của Email
     var loiEmail = 0
     //Nếu email có lổi thì lổi +1
@@ -27,98 +30,62 @@ document.getElementById('register').onclick = function(){
     else if(!kiemTra.kiemTraEmail(user.email, 'tbEmail','Email')){loiEmail++}
 
     // Nếu có lổi thì hiện class='sp-thongbao-hide'
-    if(loiEmail!=0){
-      if(document.querySelector('#tbEmail').className == 'sp-thongbao'){
-        document.querySelector('#tbEmail').className = 'sp-thongbao-hide'
-      }
-    }
-    else{
-      if(document.querySelector('#tbEmail').className = 'sp-thongbao-hide'){
-        document.querySelector('#tbEmail').className = 'sp-thongbao'
-    }
-  }
+    showHideClass(loiEmail,'#tbEmail')
 
-
+    /**---------------------------------Bắt lỗi mật khẩu------------------------------------------------------ */
       // Khởi tạo biến lổi của mật khẩu
       var loiMatKhau = 0
       //Nếu mật khẩu có lổi thì lổi +1
       if(!kiemTra.kiemTraMatKhau(user.password, 'tbPassword','Mật khẩu')){loiMatKhau++}
-  
-      // Nếu có lổi thì hiện class='sp-thongbao-hide'
-      if(loiMatKhau!=0){
-        if(document.querySelector('#tbPassword').className == 'sp-thongbao'){
-          document.querySelector('#tbPassword').className = 'sp-thongbao-hide'
-        }
-      }
-      else{
-        if(document.querySelector('#tbPassword').className = 'sp-thongbao-hide'){
-          document.querySelector('#tbPassword').className = 'sp-thongbao'
-      }
-    }
+     // Nếu có lổi thì hiện class='sp-thongbao-hide'
+    showHideClass(loiMatKhau,'#tbPassword')
 
-    // Khởi tạo biến lổi của mật khẩu
-    var loiTK = 0
-
-    //Nếu taiKhoan có lổi thì lổi +1
-    if(!kiemTra.kiemTraRong(user.name, 'tbName','Name')){loiTK++}
-    else if(!kiemTra.kiemTraKhoangCach(user.name, 'tbName','Name')){loiTK++}
-
-    // Nếu có lổi thì hiện class='sp-thongbao-hide'
-    if(loiTK!=0){
-      if(document.querySelector('#tbName').className == 'sp-thongbao'){
-        document.querySelector('#tbName').className = 'sp-thongbao-hide'
-        
-      }
-    }
-    else{
-        if(document.querySelector('#tbName').className = 'sp-thongbao-hide'){
-          document.querySelector('#tbName').className = 'sp-thongbao'
-        }
-    }
-    // Khởi tạo biến lổi của tên nhân viên
-    var loiPhone = 0
-    //Nếu họ tên có lổi thì lổi +1
-    if(!kiemTra.kiemTraRong(user.phone, 'tbPhone','Phone')){loiPhone++}
-    else if(!kiemTra.kiemTraSoDienThoai(user.phone, 'tbPhone','Phone')){loiPhone++}
-    // Nếu có lổi thì hiện class='sp-thongbao-hide'
-
-    if(loiPhone!=0){
-      if(document.querySelector('#tbPhone').className == 'sp-thongbao'){
-        document.querySelector('#tbPhone').className = 'sp-thongbao-hide'
-   
-      }
-    }
-    else{
-      if(document.querySelector('#tbPhone').className = 'sp-thongbao-hide'){
-        document.querySelector('#tbPhone').className = 'sp-thongbao'
-    }
-  }
-
-  
+    
+  /**---------------------------------Bắt lỗi xác nhận mật khẩu------------------------------------------------------ */
     // Khởi tạo biến lổi của xác nhận mật khẩu
     var loiPassCom = 0
     //Nếu họ tên có lổi thì lổi +1
     if(!kiemTra.kiemTraRong(passcm, 'tbPasswordCm','Mật khẩu')){loiPassCom++}
     else if(!kiemTra.kiemTraMatKhauXacNhan(passcm, 'tbPasswordCm','Mật khẩu',user.password )){loiPassCom++}
 
-  if(loiPassCom!=0){
-    if(document.querySelector('#tbPasswordCm').className == 'sp-thongbao'){
-      document.querySelector('#tbPasswordCm').className = 'sp-thongbao-hide'
- 
-    }
-  }
-  else{
-    if(document.querySelector('#tbPasswordCm').className = 'sp-thongbao-hide'){
-      document.querySelector('#tbPasswordCm').className = 'sp-thongbao'
-  }
-}
+     // Nếu có lổi thì hiện class='sp-thongbao-hide'
+     showHideClass(loiPassCom,'#tbPasswordCm')
 
+    /**---------------------------------Bắt lỗi name------------------------------------------------------ */
+    // Khởi tạo biến lổi của mật khẩu
+    var loiTK = 0
+
+    //Nếu taiKhoan có lổi thì lổi +1
+    if(!kiemTra.kiemTraRong(user.name, 'tbName','Name')){loiTK++}
+    else if(!kiemTra.kiemTraKhoangCach(user.name, 'tbName','Name')){loiTK++}
+     // Nếu có lổi thì hiện class='sp-thongbao-hide'
+     showHideClass(loiTK,'#tbName')
+
+    /**---------------------------------Bắt lỗi số điện thoại------------------------------------------------------ */
+    // Khởi tạo biến lổi của số điện thoại
+    var loiPhone = 0
+    //Nếu họ tên có lổi thì lổi +1
+    if(!kiemTra.kiemTraRong(user.phone, 'tbPhone','Phone')){loiPhone++}
+    else if(!kiemTra.kiemTraSoDienThoai(user.phone, 'tbPhone','Phone')){loiPhone++}
+
+     // Nếu có lổi thì hiện class='sp-thongbao-hide'
+     showHideClass(loiPhone,'#tbPhone')
+
+
+     var json = JSON.stringify(user);
+     localStorage.setItem(IDname,json)
+// Nếu lổi > 0 thì out
 if(loiEmail!=0 || loiMatKhau!=0 || loiTK!=0 || loiPhone!=0 || loiPassCom!=0){
+  
   return
-}
-    
-  DangKy(user)
+}else{
+  var json = JSON.stringify(user);
+  localStorage.setItem(IDname,json)
+  console.log(json)
+//Chạy hàm Dang ký
+  // DangKy(user)
   }
+}
 function DangKy(user){
     let promise = axios({
         url: 'https://shop.cyberlearn.vn/api/Users/signup',
@@ -134,7 +101,20 @@ function DangKy(user){
     })
 }
 
-
+//Hàm xét nếu có lổi thì hiện class='sp-thongbao-hide'
+//Hàm xét không nếu có lổi thì hiện class='sp-thongbao'
+function showHideClass(loi, idTB){
+  if(loi!=0){
+    if(document.querySelector(idTB).className == 'sp-thongbao'){
+      document.querySelector(idTB).className = 'sp-thongbao-hide'
+    }
+  }
+  else{
+    if(document.querySelector(idTB).className = 'sp-thongbao-hide'){
+      document.querySelector(idTB).className = 'sp-thongbao'
+  }
+}
+}
 
 ///EYE
 
