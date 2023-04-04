@@ -1,23 +1,23 @@
 import {Validation} from '../util/validation.js'
-import { Login } from "../models/Login.js";
+import {LoginVal} from "../models/Login.js";
 
 // emai: asc@gmail.com
 //                     asc@gmail.com
 // pass: aA1!aa
 //                     aA1!aa
-// var em ='a';
-document.getElementById('login').onclick = function(){
+var em ='a';
+document.getElementById("login").onclick = function(){
   
-    let login = new Login()
+    let loginVal = new LoginVal()
     
     em = document.getElementById('txt__email').value
-    login.email = document.getElementById('txt__email').value
-    login.password = document.getElementById('txt__password').value
+    loginVal.email = document.getElementById('txt__email').value
+    loginVal.password = document.getElementById('txt__password').value
 
     if(em!=''){
       let usera = localStorage.getItem(em);
       let data = JSON.parse(usera)
-      if(login.email== data.email && login.password==data.password){
+      if(loginVal.email== data.email && loginVal.password==data.password){
         
         window.location.href = './index.html'
         // loginAxios(login)
@@ -25,7 +25,7 @@ document.getElementById('login').onclick = function(){
   }
 }
     
-// export const emaa = 31 
+ export const emaa = 31 
 function loginAxios(user){
     let promise = axios({
         url: 'https://shop.cyberlearn.vn/api/Users/signin',
