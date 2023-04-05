@@ -76,7 +76,7 @@ if(localStorage.getItem('Login')){
       document.getElementById('loginIndex').innerHTML = html;
 }
 document.getElementById('logout').onclick = function(){
-  debugger
+  // debugger
   let stringArr= localStorage.getItem('Login');
   let data = JSON.parse(stringArr)
   // for(let i= 0; i<data.length;i++){

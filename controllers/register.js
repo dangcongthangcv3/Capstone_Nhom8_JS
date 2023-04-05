@@ -2,7 +2,6 @@ import {Validation} from '../util/validation.js'
 import { User } from "../models/User.js";
 var arr =[]
 document.getElementById('register').onclick = function(){
-  debugger
     var user = new User();
   
     user.email = document.getElementById('txt__email').value
@@ -84,6 +83,7 @@ if(loiEmail!=0 || loiMatKhau!=0 || loiTK!=0 || loiPhone!=0 || loiPassCom!=0){
   localStorage.setItem('mang',json)
   // Chạy hàm Dang ký
     DangKy(user)
+    document.getElementById('registerSuccess').innerHTML = 'Đăng ký thành công'
   }
 }
 function DangKy(user){

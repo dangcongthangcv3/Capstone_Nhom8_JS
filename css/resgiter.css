@@ -141,6 +141,10 @@ ul {
   text-decoration-line: underline;
   text-underline-offset: 8px;
 }
+#resgiter .resgiter__content .linked .alertRegisterSuccess {
+  color: green;
+  font-size: 20px;
+}
 
 #footer .top__footer {
   background-color: #fafafa;

@@ -16,14 +16,14 @@ document.getElementById('loginbutton').onclick = function(){
     if(localStorage.getItem('mang')){
       let stringArr= localStorage.getItem('mang');
       let data = JSON.parse(stringArr)
-      console.log(data)
       for(let i= 0; i<data.length;i++){
         if(loginVal.email== data[i].email && loginVal.password==data[i].password){
-          debugger
+          
           var arrLogin = [data[i].name, true]
           var jsonLogin = JSON.stringify(arrLogin);
           localStorage.setItem('Login',jsonLogin)
           loginAxios(login)
+          debugger
           window.location.href = './index.html'
         }
         else{
