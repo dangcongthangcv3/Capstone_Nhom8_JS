@@ -46,6 +46,11 @@ header .container .header .header_right .header_user a {
   font-weight: 300;
   color: #f6f6f6;
 }
+header .container .header .header_right #loginIndex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .menu {
   width: 100%;

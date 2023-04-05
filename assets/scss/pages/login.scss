@@ -15,6 +15,7 @@ ul{
     color: red;
     margin-left: 2px;
     display: inline-block;
+    margin-left: 3px;
   }
 .eye{
     position: relative;
@@ -117,15 +118,28 @@ ul{
         }
         
 
-        .btn__1{
-            color: #FFFCFC;
-            background-color: #AE18E2;
-            border-color: #AE18E2;
-            font-weight: 400;
-            font-size: 30px;
-            line-height: 36px;
-            padding: 8px 70px;
-            border-radius: 10px;
+        #loss{
+            color: red;
+        }
+        .linked{
+            p{
+                margin: 0 0 25px;
+                a{
+                    color: #000;
+                    text-decoration-line: underline;
+                    text-underline-offset: 8px;
+                }
+            }
+            .btn__1{
+                color: #FFFCFC;
+                background-color: #AE18E2;
+                border-color: #AE18E2;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 36px;
+                padding: 8px 70px;
+                border-radius: 10px;
+            }
         }
     }
 }

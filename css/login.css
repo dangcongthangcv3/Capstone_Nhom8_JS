@@ -18,6 +18,7 @@ ul {
   color: red;
   margin-left: 2px;
   display: inline-block;
+  margin-left: 3px;
 }
 
 .eye {
@@ -120,7 +121,18 @@ ul {
   border-color: #ae18e2;
   transition: all 0.75s;
 }
-#login .login__content .btn__1 {
+#login .login__content #loss {
+  color: red;
+}
+#login .login__content .linked p {
+  margin: 0 0 25px;
+}
+#login .login__content .linked p a {
+  color: #000;
+  text-decoration-line: underline;
+  text-underline-offset: 8px;
+}
+#login .login__content .linked .btn__1 {
   color: #FFFCFC;
   background-color: #AE18E2;
   border-color: #AE18E2;

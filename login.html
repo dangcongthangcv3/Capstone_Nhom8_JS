@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet" />
     <!-- link css min -->
-    <link rel="stylesheet" href="../css/login.min.css" />
+    <link rel="stylesheet" href="./css/login.min.css" />
   </head>
   <body>
     <section id="top__header">
@@ -42,8 +42,7 @@
               <li>
                 <a href="#"><img src="./assets/img/cart.png" alt="" /></a>
               </li>
-              <li><a href="./login.html">Login</a></li>
-              <li><a href="./register.html">Register</a></li>
+              <li id="loginIndex"></li>
             </ul>
           </div>
         </div>
@@ -75,8 +74,10 @@
             <i class="fa-regular fa-eye eye__open" id="eye__open"></i>
             <span class="sp-thongbao" id="tbPassword"></span>
           </div>
-          <div class="my-5 py-5">
-            <button class="btn__1" id="login">Submit</button>
+          <div class="my-4 py-5 linked">
+            <span id="loss"></span>
+            <p><a href="./register.html">Tạo tài khoản mới</a></p>
+            <button class="btn__1" id="loginbutton">Submit</button>
           </div>
         </div>
       </div>

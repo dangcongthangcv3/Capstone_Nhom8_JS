@@ -94,7 +94,7 @@ ul{
     }
     .resgiter__content{
         .form-control{
-            border-width: 0 0 5px 0;
+            border-width: 0 0 4px 0;
             border-color: #111;
             color: #000000;
             background-color: #fffcfc;
@@ -121,16 +121,27 @@ ul{
             line-height: 36px;
             font-weight: 400;
         }
-        .btn__1{
-            color: #FFFCFC;
-            background-color: #AE18E2;
-            border-color: #AE18E2;
-            font-weight: 400;
-            font-size: 30px;
-            line-height: 36px;
-            padding: 8px 70px;
-            border-radius: 10px;
+        .linked{
+            .btn__1{
+                color: #FFFCFC;
+                background-color: #AE18E2;
+                border-color: #AE18E2;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 36px;
+                padding: 8px 70px;
+                border-radius: 10px;
+            }
+            p{
+                margin: 0 0 25px;
+                a{
+                    color: #000;
+                    text-decoration-line: underline;
+                    text-underline-offset: 8px;
+                }
+            }
         }
+        
     }
 }
 #footer{

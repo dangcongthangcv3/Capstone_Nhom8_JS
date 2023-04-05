@@ -1,9 +1,10 @@
 import {Validation} from '../util/validation.js'
 import { User } from "../models/User.js";
-
+var arr =[]
 document.getElementById('register').onclick = function(){
-    let IDname = document.getElementById('txt__email').value
+  debugger
     var user = new User();
+  
     user.email = document.getElementById('txt__email').value
     user.password = document.getElementById('txt__password').value
     user.name = document.getElementById('txt__name').value
@@ -57,6 +58,7 @@ document.getElementById('register').onclick = function(){
 
     //Nếu taiKhoan có lổi thì lổi +1
     if(!kiemTra.kiemTraRong(user.name, 'tbName','Name')){loiTK++}
+    else if(!kiemTra.kiemTraDoDai(user.name, 'tbName','Name',4,15)){loiTK++}
     else if(!kiemTra.kiemTraKhoangCach(user.name, 'tbName','Name')){loiTK++}
      // Nếu có lổi thì hiện class='sp-thongbao-hide'
      showHideClass(loiTK,'#tbName')
@@ -72,18 +74,16 @@ document.getElementById('register').onclick = function(){
      showHideClass(loiPhone,'#tbPhone')
 
 
-     var json = JSON.stringify(user);
-     localStorage.setItem(IDname,json)
 // Nếu lổi > 0 thì out
 if(loiEmail!=0 || loiMatKhau!=0 || loiTK!=0 || loiPhone!=0 || loiPassCom!=0){
   
   return
 }else{
-  var json = JSON.stringify(user);
-  localStorage.setItem(IDname,json)
-  console.log(json)
-//Chạy hàm Dang ký
-  // DangKy(user)
+  arr.push(user)
+  var json = JSON.stringify(arr);
+  localStorage.setItem('mang',json)
+  // Chạy hàm Dang ký
+    DangKy(user)
   }
 }
 function DangKy(user){
@@ -134,4 +134,27 @@ document.getElementById('eye__open').onclick = function(){
 }
 document.getElementById('eye__open__2').onclick = function(){
   toggle('txt__pwdCm','eye__open__2')
+}
+
+
+
+var html = ''
+if(localStorage.getItem('Login')){
+  // de
+  let stringArr= localStorage.getItem('Login');
+  let data = JSON.parse(stringArr)
+  // for(let i= 0; i<data.length;i++){
+    var arrLogin = [data[0], false]
+    var jsonLogin = JSON.stringify(arrLogin);
+    localStorage.setItem('Login',jsonLogin)
+    
+      html = `<li><a href="./login.html">Login</a></li>
+      <li><a href="./register.html">Register</a></li>`
+    document.getElementById('loginIndex').innerHTML = html;
+  
+}
+else{
+  html = `<li><a href="./login.html">Login</a></li>
+  <li><a href="./register.html">Register</a></li>`
+    document.getElementById('loginIndex').innerHTML = html;
 }

@@ -29,6 +29,11 @@ header {
             @include text($fs-base, $fw-light, $text-c0-light);
           }
         }
+        #loginIndex{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

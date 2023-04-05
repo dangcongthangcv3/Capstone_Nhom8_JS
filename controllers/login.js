@@ -5,27 +5,34 @@ import {LoginVal} from "../models/Login.js";
 //                     asc@gmail.com
 // pass: aA1!aa
 //                     aA1!aa
-var em ='a';
-document.getElementById("login").onclick = function(){
-  
+var arrLogin = []
+document.getElementById('loginbutton').onclick = function(){
+  // debugger
     let loginVal = new LoginVal()
     
-    em = document.getElementById('txt__email').value
     loginVal.email = document.getElementById('txt__email').value
     loginVal.password = document.getElementById('txt__password').value
 
-    if(em!=''){
-      let usera = localStorage.getItem(em);
-      let data = JSON.parse(usera)
-      if(loginVal.email== data.email && loginVal.password==data.password){
-        
-        window.location.href = './index.html'
-        // loginAxios(login)
+    if(localStorage.getItem('mang')){
+      let stringArr= localStorage.getItem('mang');
+      let data = JSON.parse(stringArr)
+      console.log(data)
+      for(let i= 0; i<data.length;i++){
+        if(loginVal.email== data[i].email && loginVal.password==data[i].password){
+          debugger
+          var arrLogin = [data[i].name, true]
+          var jsonLogin = JSON.stringify(arrLogin);
+          localStorage.setItem('Login',jsonLogin)
+          loginAxios(login)
+          window.location.href = './index.html'
+        }
+        else{
+          document.getElementById('loss').innerHTML = 'Đăng nhập thất bại'
+        }
       }
-  }
+  } 
 }
-    
- export const emaa = 31 
+
 function loginAxios(user){
     let promise = axios({
         url: 'https://shop.cyberlearn.vn/api/Users/signin',
@@ -56,6 +63,27 @@ function toggle(txt__id1,txt__id2){
       id2.style.color = '#5887ef';
     }
   }
-  document.getElementById('eye__open').onclick = function(){
+document.getElementById('eye__open').onclick = function(){
     toggle('txt__password','eye__open')
+  }
+
+  var html = ''
+  if(localStorage.getItem('Login')){
+    // de
+    let stringArr= localStorage.getItem('Login');
+    let data = JSON.parse(stringArr)
+    // for(let i= 0; i<data.length;i++){
+      var arrLogin = [data[0], false]
+      var jsonLogin = JSON.stringify(arrLogin);
+      localStorage.setItem('Login',jsonLogin)
+      
+        html = `<li><a href="./login.html">Login</a></li>
+        <li><a href="./register.html">Register</a></li>`
+      document.getElementById('loginIndex').innerHTML = html;
+    
+  }
+  else{
+    html = `<li><a href="./login.html">Login</a></li>
+    <li><a href="./register.html">Register</a></li>`
+      document.getElementById('loginIndex').innerHTML = html;
   }
