@@ -126,6 +126,7 @@ ul {
 }
 #header .menu ul li {
   padding: 15px;
+  width: 100%;
 }
 #header .menu ul li a {
   text-decoration: none;
