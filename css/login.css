@@ -219,6 +219,12 @@ ul {
   padding: 8px 70px;
   border-radius: 10px;
 }
+@media (max-width: 900px) {
+  #login .login__content .linked .btn__1 {
+    font-size: 20px;
+    padding: 0 30px;
+  }
+}
 
 #footer .top__footer {
   background-color: #fafafa;

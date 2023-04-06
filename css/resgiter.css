@@ -156,6 +156,14 @@ ul {
   line-height: 48px;
   font-weight: 400;
 }
+@media (max-width: 900px) {
+  #resgiter h2 {
+    font-size: 30px;
+  }
+}
+#resgiter .resgiter__content {
+  width: 90%;
+}
 #resgiter .resgiter__content .form-control {
   border-width: 0 0 4px 0;
   border-color: #111;
@@ -165,6 +173,13 @@ ul {
   font-size: 30px;
   line-height: 36px;
   font-weight: 400;
+}
+@media (max-width: 900px) {
+  #resgiter .resgiter__content .form-control {
+    border-width: 0 0 2px 0;
+    font-size: 20px;
+    font-weight: 300;
+  }
 }
 #resgiter .resgiter__content .form-control ::placeholder {
   color: #000;
@@ -183,6 +198,19 @@ ul {
   line-height: 36px;
   font-weight: 400;
 }
+@media (max-width: 900px) {
+  #resgiter .resgiter__content .sex {
+    font-size: 20px;
+  }
+}
+#resgiter .resgiter__content .linked {
+  margin: 6rem 0;
+}
+@media (max-width: 900px) {
+  #resgiter .resgiter__content .linked {
+    margin: 2rem 0;
+  }
+}
 #resgiter .resgiter__content .linked .btn__1 {
   color: #FFFCFC;
   background-color: #AE18E2;
@@ -192,6 +220,12 @@ ul {
   line-height: 36px;
   padding: 8px 70px;
   border-radius: 10px;
+}
+@media (max-width: 900px) {
+  #resgiter .resgiter__content .linked .btn__1 {
+    font-size: 20px;
+    padding: 0 30px;
+  }
 }
 #resgiter .resgiter__content .linked p {
   margin: 0 0 25px;

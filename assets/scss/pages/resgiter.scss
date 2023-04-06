@@ -1,5 +1,5 @@
-@import "../themes/variable.scss";
-@import "../base/base.scss";
+@import "../themes/variable";
+@import "../base/base";
 
 *{
     margin: 0;
@@ -137,8 +137,12 @@ ul{
         font-size: 40px;
         line-height: 48px;
         font-weight: 400;
+        @include responsive(tab-port){
+            font-size: 30px;
+        }
     }
     .resgiter__content{
+        width: 90%;
         .form-control{
             border-width: 0 0 4px 0;
             border-color: #111;
@@ -148,6 +152,11 @@ ul{
             font-size: 30px;
             line-height: 36px;
             font-weight: 400;
+            @include responsive(tab-port){
+                border-width: 0 0 2px 0;
+                font-size: 20px;    
+                font-weight: 300;
+            }
             ::placeholder{
                 color: #000;
             }
@@ -166,8 +175,15 @@ ul{
             font-size: 30px;
             line-height: 36px;
             font-weight: 400;
+            @include responsive(tab-port){
+                font-size: 20px;    
+            }
         }
         .linked{
+            margin: 6rem 0;
+            @include responsive(tab-port){
+                margin: 2rem 0;
+            }
             .btn__1{
                 color: #FFFCFC;
                 background-color: #AE18E2;
@@ -177,6 +193,10 @@ ul{
                 line-height: 36px;
                 padding: 8px 70px;
                 border-radius: 10px;
+                @include responsive(tab-port){
+                    font-size: 20px;
+                    padding: 0 30px;    
+                }
             }
             p{
                 margin: 0 0 25px;

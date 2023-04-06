@@ -148,13 +148,13 @@ if(localStorage.getItem('Login')){
     var jsonLogin = JSON.stringify(arrLogin);
     localStorage.setItem('Login',jsonLogin)
     
-      html = `<ul><li><a href="./login.html">Login</a></li>
+      html = `<ul class='ul'><li><a href="./login.html">Login</a></li>
       <li><a href="./register.html">Register</a></li></ul>`
     document.getElementById('loginIndex').innerHTML = html;
   
 }
 else{
-  html = `<ul><li><a href="./login.html">Login</a></li>
+  html = `<ul class='ul'><li><a href="./login.html">Login</a></li>
   <li><a href="./register.html">Register</a></li></ul>`
     document.getElementById('loginIndex').innerHTML = html;
 }

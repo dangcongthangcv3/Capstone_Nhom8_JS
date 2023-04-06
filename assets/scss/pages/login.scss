@@ -196,7 +196,10 @@ ul{
                 font-size: 30px;
                 line-height: 36px;
                 padding: 8px 70px;
-                border-radius: 10px;
+                border-radius: 10px;@include responsive(tab-port){
+                    font-size: 20px;
+                    padding: 0 30px;    
+                }
             }
         }
     }
