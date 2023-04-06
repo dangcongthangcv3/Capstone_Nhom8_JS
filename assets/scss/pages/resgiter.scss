@@ -1,3 +1,6 @@
+@import "../themes/variable.scss";
+@import "../base/base.scss";
+
 *{
     margin: 0;
     padding: 0;
@@ -13,8 +16,9 @@ ul{
   }
   .sp-thongbao-hide {
     color: red;
-    margin-left: 2px; 
+    margin-left: 2px;
     display: inline-block;
+    margin-left: 3px;
   }
 .eye{
     position: relative;
@@ -27,7 +31,7 @@ ul{
 }
 #top__header{
     background-color: #000000;
-    padding: 14px 15px;
+    width: 100%;
     .top__content{
         align-items: center;
         display: flex;
@@ -36,18 +40,35 @@ ul{
             margin-top: -8px;
             img{
                 width: 100%;
+                padding: 14px 0;
             }
         }
-        .shopping{
-            ul{
-                li{
-                    display: inline-block;
-                    margin-right: 2rem;
+        
+        ul.shopping{
+            list-style-type: none;
+            display: flex;
+            li.cart{
+                padding: 10px
+            }
+            li{
+                list-style-type: none;
+                
+                .ul{
                     list-style-type: none;
-                    a{
-                        color: #F6F6F6;
-                        font-size: 16px;
-                        text-decoration: none;
+                    display: flex;
+                    li{
+                        display: block;
+                        padding: 14px 10px;
+                        a{
+                            color: #F6F6F6;
+                            font-size: 16px;
+                            text-decoration: none;
+                            
+                        }
+                        &:hover{
+                            background-color: red;
+                            transition: all 0.3s;
+                        }
                     }
                 }
             }
@@ -55,17 +76,37 @@ ul{
     }
 }
 #header{
-    padding: 15px;
     background-color: #FFFFFF;
+    .togShop{
+        color: #111;
+        text-align: right;
+        cursor: pointer;
+        display: none;
+        @include responsive(tab-port){
+            display: block;
+        }
+    }
     .menu{
         padding: 0 0;
+        @include responsive(tab-port){
+            text-align: center;
+            display: none;
+        }
         ul{
             display: flex;
             list-style-type: none;
             justify-content: flex-start;
             align-items: center;
+            list-style-type: none;
+            @include responsive(tab-port){
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+            
+                
             li{
-                margin-right: 2rem;
+                padding: 15px;
                 a{
                     text-decoration: none;
                     color: #000;
@@ -74,9 +115,14 @@ ul{
                     line-height: 24px;
                     opacity: 0.7;
                 }
-                :hover{
-                    font-weight: 500;
-                    opacity: 1;
+                &:hover{
+                        background-color: #d95353;
+                        transition: all 0.3s;
+                        font-weight: 500;
+                        opacity: 1;
+                        a{
+                            color: #fff;
+                        }
                 }
             }
         }

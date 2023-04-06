@@ -148,13 +148,26 @@ if(localStorage.getItem('Login')){
     var jsonLogin = JSON.stringify(arrLogin);
     localStorage.setItem('Login',jsonLogin)
     
-      html = `<li><a href="./login.html">Login</a></li>
-      <li><a href="./register.html">Register</a></li>`
+      html = `<ul><li><a href="./login.html">Login</a></li>
+      <li><a href="./register.html">Register</a></li></ul>`
     document.getElementById('loginIndex').innerHTML = html;
   
 }
 else{
-  html = `<li><a href="./login.html">Login</a></li>
-  <li><a href="./register.html">Register</a></li>`
+  html = `<ul><li><a href="./login.html">Login</a></li>
+  <li><a href="./register.html">Register</a></li></ul>`
     document.getElementById('loginIndex').innerHTML = html;
+}
+document.getElementById('togShop').onclick = function(){
+  // debugger
+  let mobile = document.getElementById('menu').style.display ==='flex';
+  
+  if(mobile==false){
+    document.getElementById('menu').style.display ='flex'
+    mobile = 'none'
+  }
+  else{
+    document.getElementById('menu').style.display ='none'
+    mobile = 'none'
+  }
 }
